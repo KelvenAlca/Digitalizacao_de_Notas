@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pedidos</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Heading Styles */
+        h1, h2 {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* Form Styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table Styles */
+        .table-container {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        /* Search Input Styles */
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Icons */
+        .icon {
+            margin-right: 5px;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        /* Button Styles */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pedidos Sapataria Rápida</h1>
+        <form id="pedido-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" required>
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+            <label for="nota">4 Dígitos da Nota:</label>
+            <input type="text" id="nota" required>
+            <label for="tipo_produto">Tipo do Produto:</label>
+            <input type="text" id="tipo_produto" required>
+            <label for="tipo_conserto">Tipo de Conserto:</label>
+            <input type="text" id="tipo_conserto" required>
+            <label for="dia_entrega">Dia de Entrega:</label>
+            <input type="date" id="dia_entrega" required>
+            <label for="total_preco">Total Preço:</label>
+            <input type="number" id="total_preco" required step="0.01">
+            <label for="sinal">Sinal:</label>
+            <input type="number" id="sinal" required step="0.01">
+            <button type="submit">Adicionar Pedido</button>
+        </form>
+        
+        <div class="table-container">
+            <h2>Tabela de Pedidos</h2>
+            <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Pesquisar por nome...">
+            <table id="dataTable">
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Data</th>
+                    <th>4 Dígitos da Nota</th>
+                    <th>Tipo do Produto</th>
+                    <th>Tipo de Conserto</th>
+                    <th>Dia de Entrega</th>
+                    <th>Total Preço</th>
+                    <th>Sinal</th>
+                    <th>Saldo a Pagar</th>
+                </tr>
+                <!-- Rows will be added dynamically here -->
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js.js"></script>
+</body>
+</html>
